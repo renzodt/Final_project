@@ -1,0 +1,339 @@
+@use "components";
+
+@mixin section-display {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 3rem;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 4rem;
+    border-bottom: solid 1px #ddd;
+    position: fixed;
+    background-color: white;
+}
+
+.logo img {
+    max-width: 7rem;
+}
+
+.sec-home{
+    display: flex;
+    align-items: center;
+    @include section-display();
+    .home-img img{
+        margin-top: 2rem;
+        max-width: 35rem;
+    }
+    .home-cta{
+        margin-top: 2rem;
+        flex: 1;
+        .cta-text{
+            color: components.$color-main;
+        }
+        .home-title{
+            width: 20rem;
+            font-size: 4rem;
+            font-weight: 550;
+        }
+        .home-description{
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.sec-features{
+    @include section-display();
+    display: flex;
+    flex-direction: column;
+    .intro {
+        text-align: center;
+        h3 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1rem;
+            color: #888;
+        }
+    }
+    .features{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        .features-list{
+            padding: 2rem 0;
+            max-width: 40%;
+            flex-direction: column-reverse;
+            .feature-item{
+                display: flex;
+                flex-direction: row;
+                .feature-icon{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: left;
+                }
+                .feature-description{
+                    margin-left: 1rem;
+                    .description-title {
+                        font-size: 1.25rem;
+                    }
+                    .description-text {
+                        font-size: 1rem;
+                        color: #888;
+                    }
+                }
+            }
+        }
+        .image img{
+            max-width: 45rem;
+        }
+        
+    }
+}
+
+.sec-benefits{
+    border-top: 1px solid #ddd;
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    .intro-benefits {
+        text-align: center;
+        h3 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #888;
+        }
+    }
+    .benefits{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: first baseline;
+        padding: 2rem;
+        max-width: 100%;
+        .benefit-item{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            #bf-icon{
+                font-size: 3.5rem;
+            }
+            .benefit-icon{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 1rem;
+                padding: none;
+                margin: none;
+            }
+            .benefit-description{
+                margin-left: 1rem;
+                .benefit-title {
+                    text-align: center;
+                    font-size: 1.3rem;
+                }
+                .benefit-text {
+                    text-align: center;
+                    font-size: 1.1rem;
+                    color: #888;
+                }
+            }
+            .benefit-cta{
+                text-align: center;
+            }
+        }
+    }
+}
+
+//MEDIAS QUERIES
+
+@media (min-width: 770px) and (max-width: 1170px){
+    .menu{
+        display: none;
+    }
+    .sec-home{
+        width: 100%;
+        .home-cta{
+            margin-top:3rem;
+            width: 100%;
+            .cta-text{
+                font-size: 1.2rem;
+                font-weight: 400;
+                padding-bottom: 1rem;
+            }
+            .home-title{
+                font-size: 50px;
+                font-weight: 500;
+            }
+            .home.description{
+                font-size: 16px;
+                font-weight: 400;
+            }
+            .lead-magnet{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .form-control{
+                    width: 100%;
+                    padding: 1rem 0;
+                    text-align: center;
+                }
+                .btn-main{
+                    width: 100%;
+                    padding: 1rem 0;
+                    text-align: center;
+                }
+            }
+        }
+        .home-img{
+            margin-left: 8rem;
+        }
+    }
+    .intro{
+        margin-bottom: 25px;
+    }
+    .features{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        .features-list{
+            min-width: 75%;
+            .feature-item{
+                margin-bottom: 30px;
+            }
+            #icon{
+                font-size: 2rem;
+            }
+        }
+        .image img{
+            width: 100%;
+        
+        }
+    }
+}
+
+@media (max-width: 769px){
+    .menu{
+        display: none;
+    }
+    .sec-home{
+        width: 100%;
+        .home-cta{
+            margin-top:3rem;
+            width: 100%;
+            .cta-text{
+                font-size: 1.2rem;
+                font-weight: 400;
+                padding-bottom: 1rem;
+            }
+            .home-title{
+                font-size: 50px;
+                font-weight: 500;
+            }
+            .home.description{
+                font-size: 16px;
+                font-weight: 400;
+            }
+            .lead-magnet{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .form-control{
+                    width: 100%;
+                    padding: 1rem 0;
+                    text-align: center;
+                }
+                .btn-main{
+                    width: 100%;
+                    padding: 1rem 0;
+                    text-align: center;
+                }
+            }
+        }
+        .home-img{
+            display: none;
+        }
+    }
+    .intro{
+        margin-bottom: 25px;
+    }
+    .features{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        .features-list{
+            min-width: 75%;
+            .feature-item{
+                margin-bottom: 30px;
+            }
+            #feat-item{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+                align-items: center;
+            }
+            #icon{
+                font-size: 2rem;
+            }
+        }
+        .image img{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 945px){
+    .sec-benefits{
+        .benefits{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            padding: 2rem;
+            max-width: 100%;
+            .benefit-item{
+                display: flex;
+                flex-direction: column;
+                max-width: 40%;
+                #bf-icon{
+                    font-size: 2rem;
+                }
+                .benefit-icon{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 1.5rem;
+                }
+                .benefit-description{
+                    .benefit-title {
+                        text-align: center;
+                        font-size: 1.3rem;
+                    }
+                    .benefit-text {
+                        text-align: center;
+                        font-size: 1.1rem;
+                        color: #888;
+                    }
+                }
+                .benefit-cta{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
